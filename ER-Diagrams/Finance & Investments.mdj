@@ -1,24 +1,164 @@
 {
 	"_type": "Project",
 	"_id": "AAAAAAFF+h6SjaM2Hec=",
-	"name": "Untitled",
+	"name": "Finance & Investments",
 	"ownedElements": [
 		{
-			"_type": "UMLModel",
-			"_id": "AAAAAAFF+qBWK6M3Z8Y=",
+			"_type": "ERDDataModel",
+			"_id": "AAAAAAGTT1LDha7gys0=",
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Model",
+			"name": "Finance",
 			"ownedElements": [
 				{
-					"_type": "UMLClassDiagram",
-					"_id": "AAAAAAFF+qBtyKM79qY=",
+					"_type": "ERDDiagram",
+					"_id": "AAAAAAGTT1LDha7hd/E=",
 					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+						"$ref": "AAAAAAGTT1LDha7gys0="
 					},
-					"name": "Main",
-					"defaultDiagram": true
+					"name": "Stocks",
+					"ownedViews": [
+						{
+							"_type": "ERDEntityView",
+							"_id": "AAAAAAGTT1Xsra7wkEw=",
+							"_parent": {
+								"$ref": "AAAAAAGTT1LDha7hd/E="
+							},
+							"model": {
+								"$ref": "AAAAAAGTT1XsrK7upWY="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAGTT1Xsra7xFhM=",
+									"_parent": {
+										"$ref": "AAAAAAGTT1Xsra7wkEw="
+									},
+									"font": "Arial;13;1",
+									"left": 152,
+									"top": 101,
+									"width": 185.32080078125,
+									"height": 13,
+									"text": "Stock"
+								},
+								{
+									"_type": "ERDColumnCompartmentView",
+									"_id": "AAAAAAGTT1Xsra7yRv8=",
+									"_parent": {
+										"$ref": "AAAAAAGTT1Xsra7wkEw="
+									},
+									"model": {
+										"$ref": "AAAAAAGTT1XsrK7upWY="
+									},
+									"subViews": [
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAGTT1YSqa7+ewI=",
+											"_parent": {
+												"$ref": "AAAAAAGTT1Xsra7yRv8="
+											},
+											"model": {
+												"$ref": "AAAAAAGTT1YSoq77ULo="
+											},
+											"font": "Arial;13;0",
+											"left": 157,
+											"top": 124,
+											"width": 175.32080078125,
+											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAGTT1ZuV68GvOg=",
+											"_parent": {
+												"$ref": "AAAAAAGTT1Xsra7yRv8="
+											},
+											"model": {
+												"$ref": "AAAAAAGTT1ZuUK8D2F4="
+											},
+											"font": "Arial;13;0",
+											"left": 157,
+											"top": 139,
+											"width": 175.32080078125,
+											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAGTT1xuY68NeEw=",
+											"_parent": {
+												"$ref": "AAAAAAGTT1Xsra7yRv8="
+											},
+											"model": {
+												"$ref": "AAAAAAGTT1xuXK8KJYw="
+											},
+											"font": "Arial;13;0",
+											"left": 157,
+											"top": 154,
+											"width": 175.32080078125,
+											"height": 13
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 152,
+									"top": 119,
+									"width": 185.32080078125,
+									"height": 53
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 152,
+							"top": 96,
+							"width": 185.32080078125,
+							"height": 76,
+							"nameLabel": {
+								"$ref": "AAAAAAGTT1Xsra7xFhM="
+							},
+							"columnCompartment": {
+								"$ref": "AAAAAAGTT1Xsra7yRv8="
+							}
+						}
+					]
+				},
+				{
+					"_type": "ERDEntity",
+					"_id": "AAAAAAGTT1XsrK7upWY=",
+					"_parent": {
+						"$ref": "AAAAAAGTT1LDha7gys0="
+					},
+					"name": "Stock",
+					"columns": [
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAGTT1YSoq77ULo=",
+							"_parent": {
+								"$ref": "AAAAAAGTT1XsrK7upWY="
+							},
+							"name": "StockId",
+							"type": "int",
+							"length": 0,
+							"primaryKey": true
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAGTT1ZuUK8D2F4=",
+							"_parent": {
+								"$ref": "AAAAAAGTT1XsrK7upWY="
+							},
+							"name": "StockTitle",
+							"type": "varchar",
+							"length": "64"
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAGTT1xuXK8KJYw=",
+							"_parent": {
+								"$ref": "AAAAAAGTT1XsrK7upWY="
+							},
+							"name": "StockLogo",
+							"type": "varbinary",
+							"length": 0
+						}
+					]
 				}
 			]
 		}
