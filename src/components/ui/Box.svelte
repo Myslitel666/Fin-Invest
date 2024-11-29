@@ -41,7 +41,7 @@
     .box {
 		display: flex;
 		align-items: center;
-		padding: 1rem;
+		padding: 1.75rem;
 		border: 1px solid #ddd;
 		border-radius: 0.5rem;
 
@@ -53,10 +53,9 @@
     }
 
 	.stock-logo {
-		width: 80px;
-		height: 80px;
+		width: 85px;
+		height: 85px;
 		border-radius: 50%; /* Делаем изображение круглым */
-		margin-bottom: 0.5rem;
 	}
 
 	.price {
