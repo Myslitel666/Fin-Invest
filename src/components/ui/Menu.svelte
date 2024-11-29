@@ -1,4 +1,19 @@
-<nav class = 'menu'>
+<script lang='ts'>
+	import { themeMode, themeStore } from 'svelte-elegant/stores/themeStore';
+    import type { IColorThemeStore } from "svelte-elegant/interfaces";
+
+    let theme: IColorThemeStore | undefined;
+
+    // Подписываемся на изменения темы
+    themeStore.subscribe(value => {
+        theme = value; //Инициализация объекта темы
+    });
+</script>
+
+<nav    
+    class = 'menu'
+    style:background-color = {$themeMode === 'light' ? '#f8f8f8' : '#1c1c1c'}
+>
     <slot />
 </nav>
 
@@ -8,7 +23,6 @@
         flex-direction: column;
         height: 100vh;
         width: 15rem;
-        background-color: #f8f8f8;
         position: fixed;
         padding-top: 5.5rem;
         padding-left: 1rem;

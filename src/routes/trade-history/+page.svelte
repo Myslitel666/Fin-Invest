@@ -45,26 +45,6 @@
 	];
 </script>
 
-<Header height = 3.5rem>
-	<button style:gap = '0.5rem'>
-		<img src = '/Images/Logo.png' alt = 'logo' class = 'logo' />
-		<p style:font-size=26px>
-			<span 
-				style:color = '#343434'
-				style:transition = 'all 0.3s'
-			>
-				Finance & Investments2
-			</span> 
-		</p>
-	</button>
-	<div 
-		style:margin-left = auto
-		style:margin-right = 1.25rem
-	>
-		<ColorThemeSwitch />
-	</div>
-</Header>
-
 <section>
 	<div class = 'content'>
 		{#each stocks as stock}
@@ -92,11 +72,5 @@
 		flex-direction: column;
 		gap: 1.03rem; 
 
-	}
-
-	.logo {
-		width: 3.25rem;
-		height: 3.25rem;
-		border-radius: 50%;
 	}
 </style>
