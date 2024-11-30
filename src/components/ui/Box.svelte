@@ -36,7 +36,7 @@
 >
     <img src={stockLogo} alt={stockTitle} class="stock-logo" />
     <div class="box-content">
-        <p >{stockTitle}</p>
+        <p>{stockTitle}</p>
         <p 
             class="price"
             style:color={theme?.colors.primary}
@@ -46,16 +46,15 @@
     </div>
 </button>
 
-<!-- Дополнительная информация под Box -->
-{#if isOpen}
-    <div 
-        class="details"
-    >
-        <p><span style:font-weight = 600>Lots Quantity: </span> {lotsQuantity} шт.</p>
-        <p><span style:font-weight = 600>Lot Value: </span> {lotValue.replace('.', ',')} ₽</p>
-        <p><span style:font-weight = 600>Comission: </span> {comission} ₽</p>
-    </div>
-{/if}
+<!-- Дополнительная информация под Box с плавным раскрытием -->
+<div 
+    class="details" 
+    style:height={isOpen ? '4.25rem' : '0'}
+>
+    <p><span style:font-weight = 600>Lots Quantity: </span> {lotsQuantity} шт.</p>
+    <p><span style:font-weight = 600>Lot Value: </span> {lotValue.replace('.', ',')} ₽</p>
+    <p><span style:font-weight = 600>Comission: </span> {comission} ₽</p>
+</div>
 
 <style>
     .box {
@@ -80,7 +79,6 @@
     .box-content p {
         display: flex;
         justify-content: flex-start; /* Прижимаем содержимое к левому краю */
-        padding: 0.25rem;
     }
 
     .stock-logo {
@@ -97,6 +95,8 @@
         font-size: 0.9rem;
         color: #555;
         padding-left: 1.5rem;
+        overflow: hidden;
+        transition: height 0.3s ease; /* Плавный переход */
     }
 
     .details p {

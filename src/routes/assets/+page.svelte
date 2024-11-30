@@ -91,7 +91,7 @@
 		margin-bottom: 1rem;
 		display: flex;
 		flex-direction: column;
-		gap: 0.88rem; 
+		gap: 0.45rem; 
 
 	}
 </style>
