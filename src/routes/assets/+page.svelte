@@ -1,13 +1,22 @@
 <script lang="ts">
 	import Box from '../../components/ui/Box.svelte';
-	import { Header } from 'svelte-elegant';
-	import { ColorThemeSwitch } from 'svelte-elegant';
 	import { onMount } from 'svelte';
+	import type { Stock } from '../../interfaces/stock';
+
+	async function getAssets() {
+        const response = await fetch('/api/getAssets');
+        const data = await response.json();
+
+		console.log(data);
+        return data;
+    };
 
 	// Массив структур stocks
-	let stocks = [
-		
-	];
+	let stocks:Stock[] = [];
+
+	onMount(async () => {
+		stocks = await getAssets();
+    });
 
 	// lotsQuantity={stock.lotsQuantity}
 	// lotValue={stock.lotValue}
@@ -19,9 +28,9 @@
 	<div class = 'content'>
 		{#each stocks as stock}
 			<Box
-				stockId = {stock.stockId}
-				stockTitle={stock.stockTitle}
-				stockLogo={stock.stockLogo}
+				stockId = {stock.stockid}
+				stockTitle={stock.stocktitle}
+				stockLogo={stock.stocklogo}
 			/>
 		{/each}
 	</div>
