@@ -2,7 +2,7 @@
 CREATE TABLE Stock (
     stockId INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, -- Уникальный идентификатор ценной бумаги
     stockTitle VARCHAR(64) NOT NULL,                      -- Название ценной бумаги
-    stockLogo TEXT                                        -- Логотип ценной бумаги
+    stockLogo BYTEA                                       -- Логотип ценной бумаги
 );
 
 -- Таблица Repurchase
@@ -26,7 +26,7 @@ CREATE TABLE Transaction (
     repurchaseId INT NOT NULL,                                        -- Ссылка на экземпляр вложения
     transactionTypeId INT NOT NULL,                                   -- Ссылка на тип транзакции
 	lotsQuantity INT NOT NULL,                                        -- Количество лотов
-    lotValue NUMERIC(10, 2) NOT NULL NOT NULL,                        -- Стоимость лота
+    lotValue NUMERIC(10, 2) NOT NULL NOT NULL,                        -- Стоимость лота                                       -- Количество лотов
     transactionPrice NUMERIC(10, 2) NOT NULL,                         -- Цена сделки
     transactionDatetime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, -- Дата и время транзакции
     isValid BOOLEAN DEFAULT TRUE,                                     -- Валидность транзакции

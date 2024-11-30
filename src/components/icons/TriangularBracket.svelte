@@ -1,6 +1,6 @@
 <script lang='ts'>
     export let stroke = ''
-    let size = '2rem'
+    export let size = '2rem'
 </script>
 
 <svg width={size} height={size} viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
