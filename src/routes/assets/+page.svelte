@@ -3,7 +3,6 @@
 	import { Header } from 'svelte-elegant';
 	import { ColorThemeSwitch } from 'svelte-elegant';
 	import { onMount } from 'svelte';
-	
 
 	// Массив структур stocks
 	let stocks = [
@@ -91,7 +90,6 @@
 		margin-bottom: 1rem;
 		display: flex;
 		flex-direction: column;
-		gap: 0.45rem; 
-
+		gap: 0.45rem;
 	}
 </style>

@@ -1,6 +1,7 @@
 <script lang='ts'>
     import type { IColorThemeStore } from "svelte-elegant/interfaces";
-    import { themeStore } from "svelte-elegant/stores/themeStore";
+    import { themeStore, themeMode } from "svelte-elegant/stores/themeStore";
+    import TriangularBracket from "../icons/TriangularBracket.svelte";
 
     export let stockTitle: string;
     export let stockLogo: string;
@@ -29,10 +30,10 @@
 <button 
     class="box"
     on:click={toggleDetails}
-    style:border={`1px solid ${theme?.border.disabled.color}`}
+    style:border={`1px solid ${$themeMode === 'light' ? '#cccccc' : '#2f2f2f'}`}
     style:width="35rem"
     style:border-radius={theme?.border.borderRadius}
-    style:--bg-color={theme?.disabled.touch}
+    style:--bg-color={$themeMode === 'light' ? '#f2f2f2' : '#202020'}
 >
     <img src={stockLogo} alt={stockTitle} class="stock-logo" />
     <div class="box-content">
@@ -43,6 +44,13 @@
         >
             Price: {price} ₽
         </p>
+    </div>
+    <div 
+        class = 'triangular-btn'
+        style:rotate = {isOpen ? '-90deg' : ''}
+        style:transition = 'rotate 0.3s'
+    >
+        <TriangularBracket/>
     </div>
 </button>
 
@@ -99,6 +107,10 @@
         transition: height 0.3s ease; /* Плавный переход */
     }
 
+    .triangular-btn {
+        margin-left: auto;
+    }
+
     .details p {
         margin-bottom: 0.3rem;
     }
@@ -106,4 +118,6 @@
     .details p:last-child {
         margin-bottom: 0;
     }
+
+
 </style>
