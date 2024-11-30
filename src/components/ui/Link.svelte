@@ -2,7 +2,7 @@
     import type { IColorThemeStore } from "svelte-elegant/interfaces";
     import { activeLink } from './../../stores/activeLinkStore';
     import { onMount } from 'svelte';
-    import { themeStore } from "svelte-elegant/stores/themeStore";
+    import { themeStore, themeMode } from "svelte-elegant/stores/themeStore";
 
     export let href = ''
 
@@ -27,6 +27,8 @@
 <a 
     href = {href}
     style:background-color = {isActive ? theme?.colors.primary : ''}
+    style:--Xl-hover = {theme?.disabled.touch}
+    style:color = {isActive ? '#fff' : $themeMode === 'light' ? '#383838' : 'white'}
     onclick = {() => {
         // Устанавливаем текущую ссылку как активную
         activeLink.set(href);
@@ -36,5 +38,15 @@
 </a>
 
 <style>
+    a {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem;
+        border-radius: 4px;
+ 
+    }
 
+    a:hover {
+        background-color: var(--Xl-hover);
+    }
 </style>

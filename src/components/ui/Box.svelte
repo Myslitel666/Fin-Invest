@@ -2,9 +2,11 @@
     import type { IColorThemeStore } from "svelte-elegant/interfaces";
     import { themeStore } from "svelte-elegant/stores/themeStore";
 
-    export let stockId: number;
 	export let stockTitle: string;
 	export let stockLogo: string;
+    export let lotsQuantity: string;
+    export let lotValue: string;
+    export let comission: string;
 	export let price: string;
 
     let theme: IColorThemeStore | undefined;
@@ -27,12 +29,15 @@
     <div 
         class = 'box-content'
     >
-        <p>{stockTitle}</p>
+        <p style:font-weight = 600>{stockTitle}</p>
+        <p>Lots Quantity: {lotsQuantity} шт.</p>
+        <p>Lot Value: {lotValue.replace('.',',')} ₽</p>
+        <p>Comission: {comission} ₽</p>
         <p 
             class="price"
             style:color={theme?.colors.primary}
         >
-            Price: {price}
+            Price: {price} ₽
         </p>
     </div>
 </div>
@@ -47,6 +52,10 @@
 
 		width: 200px;
 	}
+
+    .box-content p {
+        margin-bottom: 0.18rem;
+    }
 
     .box-content {
         margin-left: 1rem;

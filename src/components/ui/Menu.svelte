@@ -24,7 +24,8 @@
         height: 100vh;
         width: 15rem;
         position: fixed;
-        padding-top: 5.5rem;
-        padding-left: 1rem;
+        padding-top: 5.25rem;
+        padding-left: 0.66rem;
+        padding-right: 0.66rem;
     }
 </style>

@@ -6,4 +6,5 @@
 <Menu>
 	<Link href = '/assets'>Assets</Link>
 	<Link href = '/trade-history'>Trade History</Link>
+	<Link href = '/trade-history'>Bank accounts</Link>
 </Menu>
