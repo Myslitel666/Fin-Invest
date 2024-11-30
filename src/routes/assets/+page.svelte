@@ -87,11 +87,11 @@
 	}
 
 	.content {
-		margin-top: 5.5rem;
+		margin-top: 5.33rem;
 		margin-bottom: 1rem;
 		display: flex;
 		flex-direction: column;
-		gap: 1.03rem; 
+		gap: 0.88rem; 
 
 	}
 </style>

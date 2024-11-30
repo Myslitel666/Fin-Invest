@@ -66,7 +66,6 @@
         border: 1px solid #ddd;
         border-radius: 0.5rem;
         transition: background-color 0.3s;
-        margin-bottom: 0.5rem; /* Расстояние между Box и раскрывающейся информацией */
     }
 
     .box:hover {
@@ -102,5 +101,9 @@
 
     .details p {
         margin-bottom: 0.3rem;
+    }
+
+    .details p:last-child {
+        margin-bottom: 0;
     }
 </style>
