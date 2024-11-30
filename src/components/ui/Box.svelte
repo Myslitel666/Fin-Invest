@@ -26,8 +26,12 @@
 
     // Функция для переключения состояния
     function toggleDetails() {
-        activeStockId.set(stockId);
-        isOpen = !isOpen;
+        if (isOpen === false) {
+            activeStockId.set(stockId);
+        }
+        else {
+            activeStockId.set(-1);
+        }
     }
 </script>
 
