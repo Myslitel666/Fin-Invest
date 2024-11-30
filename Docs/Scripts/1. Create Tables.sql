@@ -28,6 +28,7 @@ CREATE TABLE Transaction (
 	lotsQuantity INT NOT NULL,                                        -- Количество лотов
     lotValue NUMERIC(10, 2) NOT NULL NOT NULL,                        -- Стоимость лота
     transactionPrice NUMERIC(10, 2) NOT NULL,                         -- Цена сделки
+	comission NUMERIC(10, 2) NOT NULL NOT NULL,                       -- Комиссия
     transactionDatetime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, -- Дата и время транзакции
     isValid BOOLEAN DEFAULT TRUE,                                     -- Валидность транзакции
     CONSTRAINT FK_Transaction_Repurchase FOREIGN KEY (repurchaseId)
