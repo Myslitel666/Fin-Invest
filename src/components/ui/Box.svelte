@@ -50,7 +50,7 @@
         style:rotate = {isOpen ? '-90deg' : ''}
         style:transition = 'rotate 0.3s'
     >
-        <TriangularBracket/>
+        <TriangularBracket stroke = {$themeMode === 'light' ? '#afafaf' : '#fff'}/>
     </div>
 </button>
 
