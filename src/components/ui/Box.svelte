@@ -5,12 +5,12 @@
     import { activeStockId } from "../../stores/activeBoxStore";
 
     export let stockId: number;
-    export let stockTitle: string;
-    export let stockLogo: string;
-    export let lotsQuantity: string;
-    export let lotValue: string;
-    export let comission: string;
-    export let price: string;
+    export let stockTitle = '';
+    export let stockLogo = '';
+    export let lotsQuantity = '';
+    export let lotValue = '';
+    export let comission = '';
+    export let price = '';
 
     let theme: IColorThemeStore | undefined;
 
