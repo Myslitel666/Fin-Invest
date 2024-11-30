@@ -13,6 +13,7 @@
 <nav    
     class = 'menu'
     style:background-color = {$themeMode === 'light' ? '#f8f8f8' : '#1c1c1c'}
+    style:transition = 'all 0.3s'
 >
     <slot />
 </nav>

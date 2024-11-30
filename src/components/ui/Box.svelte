@@ -2,7 +2,9 @@
     import type { IColorThemeStore } from "svelte-elegant/interfaces";
     import { themeStore, themeMode } from "svelte-elegant/stores/themeStore";
     import TriangularBracket from "../icons/TriangularBracket.svelte";
+    import { activeStockId } from "../../stores/activeBoxStore";
 
+    export let stockId: number;
     export let stockTitle: string;
     export let stockLogo: string;
     export let lotsQuantity: string;
@@ -20,8 +22,11 @@
     // Состояние для управления раскрытием
     let isOpen = false;
 
+    $: isOpen = $activeStockId === stockId;
+
     // Функция для переключения состояния
     function toggleDetails() {
+        activeStockId.set(stockId);
         isOpen = !isOpen;
     }
 </script>
@@ -34,6 +39,7 @@
     style:width="35rem"
     style:border-radius={theme?.border.borderRadius}
     style:--bg-color={$themeMode === 'light' ? '#f2f2f2' : '#202020'}
+    style:transition = 'all 0.3s'
 >
     <img src={stockLogo} alt={stockTitle} class="stock-logo" />
     <div class="box-content">
