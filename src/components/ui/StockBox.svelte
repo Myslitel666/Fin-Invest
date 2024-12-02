@@ -1,6 +1,7 @@
 <script lang='ts'>
     import type { IColorThemeStore } from "svelte-elegant/interfaces";
     import { themeStore, themeMode } from "svelte-elegant/stores/themeStore";
+    import { Box } from "svelte-elegant";
     import TriangularBracket from "../icons/TriangularBracket.svelte";
     import { activeStockId } from "../../stores/activeBoxStore";
 
@@ -12,15 +13,15 @@
     export let comission = '';
     export let price = '';
 
+    // Состояние для управления раскрытием
+    let isOpen = false;
+
     let theme: IColorThemeStore | undefined;
 
     // Подписываемся на изменения темы
     themeStore.subscribe(value => {
         theme = value; // Инициализация объекта темы
     });
-
-    // Состояние для управления раскрытием
-    let isOpen = false;
 
     $: isOpen = $activeStockId === stockId;
 
@@ -36,14 +37,10 @@
 </script>
 
 <!-- Основной Box -->
-<button 
-    class="box"
-    on:click={toggleDetails}
-    style:border={`1px solid ${$themeMode === 'light' ? '#cccccc' : '#2f2f2f'}`}
-    style:width="35rem"
-    style:border-radius={theme?.border.borderRadius}
-    style:--bg-color={$themeMode === 'light' ? '#f2f2f2' : '#202020'}
-    style:transition = 'all 0.3s'
+<Box 
+    padding = 1.5rem
+    width = 35rem
+    onclick={toggleDetails}
 >
     <img src={stockLogo} alt={stockTitle} class="stock-logo" />
     <div class="box-content">
@@ -62,7 +59,7 @@
     >
         <TriangularBracket stroke = {$themeMode === 'light' ? '#afafaf' : '#fff'}/>
     </div>
-</button>
+</Box>
 
 <!-- Дополнительная информация под Box с плавным раскрытием -->
 <div 
@@ -75,21 +72,6 @@
 </div>
 
 <style>
-    .box {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start; /* Прижимаем содержимое к левому краю */
-        padding: 1.5rem;
-        border: 1px solid #ddd;
-        border-radius: 0.5rem;
-        transition: background-color 0.3s;
-    }
-
-    .box:hover {
-        cursor: pointer;
-        background-color: var(--bg-color);
-    }
-
     .box-content {
         margin-left: 1rem;
     }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Box from '../../components/ui/Box.svelte';
+	import StockBox from '../../components/ui/StockBox.svelte';
 	import { onMount } from 'svelte';
 	import type { Stock } from '../../interfaces/stock';
 
@@ -26,7 +26,7 @@
 <section>
 	<div class = 'content'>
 		{#each stocks as stock}
-			<Box
+			<StockBox
 				stockId = {stock.stockid}
 				stockTitle={stock.stocktitle}
 				stockLogo={stock.stocklogo}

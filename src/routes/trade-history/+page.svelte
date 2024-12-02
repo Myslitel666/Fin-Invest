@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Box from '../../components/ui/Box.svelte';
+	import Box from '../../components/ui/StockBox.svelte';
 	import { Header } from 'svelte-elegant';
 	import { ColorThemeSwitch } from 'svelte-elegant';
 	import { onMount } from 'svelte';
