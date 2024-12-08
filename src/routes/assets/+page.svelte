@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { themeMode } from 'svelte-elegant/stores/themeStore';
 	import StockBox from '../../components/ui/StockBox.svelte';
 	import { onMount } from 'svelte';
 	import type { Stock } from '../../interfaces/stock';
+	import Plus from '../../components/icons/Plus.svelte';
+	import { Button } from 'svelte-elegant';
 
 	async function getAssets() {
         const response = await fetch('/api/getAssets');
@@ -33,6 +36,20 @@
 			/>
 		{/each}
 	</div>
+	<div class = 'btn-plus'>
+		<Button 
+			width = '3.15rem'
+			height = '3.15rem'
+			borderRadius = 50%
+			padding = 0.66rem
+			boxShadow = { $themeMode === 'light' ? '0px 4px 12px 3px rgba(0, 0, 0, 0.2)' : '0px 0px 36px 3px rgba(255, 255, 255, 0.3)' }
+		>
+			<Plus 
+				size = 2.5rem 
+			/>
+		</Button>
+	<div>
+	
 </section>
 
 <style>
@@ -48,5 +65,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.45rem;
+	}
+
+	.btn-plus {
+		position: fixed;
+		margin-top: 7.8rem;
+		margin-left: 41rem;
 	}
 </style>
