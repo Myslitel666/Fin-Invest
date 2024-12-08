@@ -10,7 +10,7 @@
     // Подписываемся на изменения темы
     themeStore.subscribe(value => {
         theme = value; // Инициализация объекта темы
-        fill = $themeMode === 'light' ? '#A6FF96' : 'white'
+        fill = $themeMode === 'light' ? '#E4FFDF' : 'white'
     });
 </script>
 
